@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <section id="content-zone">
+    <textarea id="txtarea-composed-content" autofocus="autofocus"></textarea>
+    <a id="btn-publish" class="btn btn-info" href="#modal-publish" data-toggle="modal"><i class="icon-upload icon-white"></i>  publish</a>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal-publish" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Publish <i class="icon-upload"></i></h3>
+    </div>
+    <div class="modal-body">
+      <p>Hitting Publish button below will produce a publish URL</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <button class="btn btn-info"><i class="icon-upload icon-white"></i> Publish</button>
+    </div>
+  </div>
+
+  <section id="content-metrics">
+    <span id="badge-words" class="label">10</span> words
+    <span id="badge-characters" class="label">123</span> characters
+    <span id="badge-sentences" class="label">4</span> sentences
+    <span id="badge-readingtime" class="label pull-right">4</span>
+  </section>
+
+
+  <script type="text/javascript">
+  $(function() {
+
+    var characterCount = 0,
+        wordCount = 0,
+        sentenceCount = 0,
+        readingTime = 0;     
+    $("#badge-characters").text(characterCount);
+    $("#badge-words").text(wordCount);
+    $("#badge-sentences").text(sentenceCount);
+    $("#badge-readingtime").text(readingTime);
+
+    function expandTextarea(id) {
+        var $element = $('#txtarea-composed-content').get(0); 
+        
+        $element.addEventListener('keyup', function(e) {
+          var ev = e || event;
+          //console.log(ev.keyCode);
+          // characterCount: on every keystroke
+          characterCount += 1;          
+          $("#badge-characters").text(characterCount);
+
+          // wordCount: on space key or period
+          if (ev.keyCode == 32) {
+            wordCount += 1;            
+            $("#badge-words").text(wordCount);
+          }
+
+          // sentenceCount: check for period character '.'
+          if (ev.keyCode == 190) {
+            sentenceCount += 1;
+            wordCount += 1;
+            $("#badge-words").text(wordCount);
+            $("#badge-sentences").text(sentenceCount);
+            readingTime = sentenceCount;
+            $("#badge-readingtime").text(readingTime+" secs");
+          }
+
+          // automatically increase text area
+          this.style.overflow = 'hidden';
+          this.style.height = 0;
+          this.style.height = this.scrollHeight + 'px';
+        }, false);
+    }
+
+    expandTextarea('txtarea');
+
+    $("#content-zone").slideDown("slow");     
+
+  });
+    
+  </script>
+
+ {% endblock %}

@@ -1,0 +1,57 @@
+body {
+	font-size: 16px;
+	background: #fafafa;
+}
+
+section {
+	margin: 30px 0px;
+}
+
+.masthead > a {
+	text-decoration: none;
+}
+
+.jumbotron {
+	text-align: center;
+	margin: 50px 0px;
+}
+.jumbotron h1 {
+	font-size: 3.125em;
+	margin: 30px 0px;
+}
+.jumbotron p {
+	margin-bottom: 30px;
+}
+
+#txtarea-composed-content {
+	margin:0px 0px;
+  padding:10px;
+  height:50px;
+  line-height:1.5em;
+  width:96%;
+  display:block;
+  margin:0px auto; 
+  resize: none;
+  font-size: 1.1em;
+  font-family: 'courier new';
+  border-radius: 0px;
+}
+
+#content-zone {
+	display: none;
+	text-align: center;
+}
+#btn-publish {
+	margin-top: 50px;
+}
+#content-metrics {
+	margin-top: 50px;
+	color: #aaa;	
+}
+
+#footer {
+	bottom: 0;
+	position: fixed;
+	width: inherit;
+	margin-bottom: 20px;
+}

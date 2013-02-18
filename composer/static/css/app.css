@@ -207,6 +207,9 @@ textarea:focus {
 #posts-list ul li{
 	margin-bottom: 50px;
 }
+.post-date {
+	color: #aaa;
+}
 
 #post-detail h3 {
 	text-align: center;

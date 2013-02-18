@@ -10,7 +10,8 @@
 		        	<a href="/posts/{{ post.id }}">
 		        		<span class="label label-info">{{ post.id }}</span>
 		        	</a>
-		        	<label class="">{{ post.pub_date }}</label>
+		        	<h3><a href="{{ post.url }}">{{ post.url }}</a></h3>
+		        	<label class="post-date">{{ post.pub_date }}</label>
 		        	<span>{{ post.content }}</span>
 		        	<hr>
 		        </li>

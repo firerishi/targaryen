@@ -1,3 +1,4 @@
+
 body {
 	font-size: 16px;
 	background: #fafafa;
@@ -13,7 +14,7 @@ section {
 
 .jumbotron {
 	text-align: center;
-	margin: 50px 0px;
+	margin: 100px 0px;
 }
 .jumbotron h1 {
 	font-size: 3.125em;
@@ -23,8 +24,28 @@ section {
 	margin-bottom: 30px;
 }
 
+/*bootstrap overrides*/
+textarea,
+textarea:focus {
+	border-color: rgba(0,0,0,0);
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
 #txtarea-composed-content {
 	margin:0px 0px;
+  padding:10px;
+  height:90%;
+  line-height:1.5em;
+  width:96%;
+  display:block;
+  margin:0px auto; 
+  resize: none;
+  font-size: 1.1em;
+  border-radius: 0px;
+}
+#modal-focused-txtarea {
+	margin:20px 0px;
   padding:10px;
   height:50px;
   line-height:1.5em;
@@ -33,25 +54,170 @@ section {
   margin:0px auto; 
   resize: none;
   font-size: 1.1em;
-  font-family: 'courier new';
   border-radius: 0px;
 }
+#modal-focus {
+	width: 80%;
+	margin-left: 0;
+	left: 10%;
+}
 
-#content-zone {
-	display: none;
+#heading-content h2 {
+	color: #555;
+}
+#heading-content h3 {
+	color: #666;
+}
+#heading-content p {
+	color: #777;
+}
+
+#composer-container {
 	text-align: center;
 }
+#content-zone {
+	display: none;
+	/*text-align: center;*/
+}
+/*#btn-publish,
+#btn-focus {
+	margin-top: 20px;
+	position: fixed;
+	right: 0;
+	margin-right: -100px;
+}
+#btn-focus {
+	bottom: 0px;
+}*/
 #btn-publish {
-	margin-top: 50px;
+	margin-bottom: 50px;
 }
 #content-metrics {
-	margin-top: 50px;
+	position: fixed;
+	bottom: 0;
+	right: 0%;
 	color: #aaa;	
+	opacity: 0.7;
+	background: #fff;
+	padding: 10px;
+	margin: 0;
+}
+
+.tools {	
+	left: 0;
+	position: fixed;
+	bottom: 0;
+	margin-bottom: -280px;
+	margin-left: -100px;
+	z-index: 1049;
+	background: #fff;
+	-webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  border: 1px solid #999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.tools ul {	
+	list-style-type: none;
+	margin: 0;
+	/*border: 1px solid #999;*/
+	margin-left: -100px;
+}
+.tools ul li {
+	cursor: pointer;
+	padding: 10px 20px;
+	border: 1px solid #eaeaea;
+	text-align: center;
+}
+.tools ul li#mood-default {
+	font-family: 'courier new';
+	background: #FDFDFA;
+}
+.tools ul li#mood-newspaper {
+	font-family: 'georgia';
+	background: #FDFDFD;
+}
+.tools ul li#mood-novel {
+	font-family: 'cambria';
+	background: #F4EED9;
+}
+.tools ul li#mood-ebook {
+	font-family: 'corbel';
+	background: #EDEBE8;
+}
+.tools ul li#mood-night {
+	font-family: 'courier new';
+	background: #323A40;
+	color: #efefef;
+}
+.tools #btn-mood {
+	left:20px;
+	padding: 30px;
+	background: url(../img/engine.png) no-repeat;
+	background-position: center right;
+	background-size: 20px 20px;
+	text-decoration: none;
+}
+.tools #app-actions {
+	background: #fff;
+	padding: 20px 0px;
+}
+.tools:hover {
+	left: 98px;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+
+.default-mood-all {
+	background: #FAFAFA;
+	font-family: 'courier new';
+}
+/* newspaper */
+.newspaper-all {
+	background: #FDFDFD;
+	font-family: 'georgia';
+}
+/* novel */
+.novel-all {
+	background: #F4EED9;
+	font-family: 'cambria';
+}
+/* ebook */
+.ebook-all {
+	background: #EDEBE8;
+	font-family: 'corbel';
+}
+/* night */
+.night-all {
+	background: #323A40;
+	font-family: 'courier new';
+	color: #efefef;
 }
 
 #footer {
-	bottom: 0;
-	position: fixed;
-	width: inherit;
-	margin-bottom: 20px;
+	margin-top: 10%;
+}
+
+
+#posts-list ul {
+	list-style: none;
+}
+#posts-list ul li{
+	margin-bottom: 50px;
+}
+
+#post-detail h3 {
+	text-align: center;
+}
+
+/* Phone */
+@media screen and (max-width: 480px) {
+  
+ .jumbotron,
+ .masthead {
+ 	margin: 0;
+ }
+
 }

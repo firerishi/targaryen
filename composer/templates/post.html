@@ -5,7 +5,10 @@
 	<div id="post-detail" class="container"> 
 	  <!-- <h3><a href="{{ urlness }}">{{ urlness }}</a></h3> -->
 	  <h3><a href="{{ post_detail.url }}">{{ post_detail.url }}</a></h3>
-   	<p>{{ post_detail.content }}</p>		
+   	<p>{{ post_detail.content }}</p>	
+   	{% autoescape off %}
+   	{{ markdownhtml }}	
+   	{% endautoescape %}
    	<label class="pull-right post-date">{{ post_detail.pub_date }}</label>
 	</div>
 

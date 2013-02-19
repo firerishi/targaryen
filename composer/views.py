@@ -44,7 +44,9 @@ def home(request):
 		urlness = shorternUrl(urlness)
 		post_obj.url = urlness
 		post_obj.save()
-		return render_to_response('post.html', {'post_detail': post_obj}, context_instance=RequestContext(request))
+		import markdown
+		markdownhtml = markdown.markdown(post_obj.content)
+		return render_to_response('post.html', {'post_detail': post_obj, 'markdownhtml': markdownhtml}, context_instance=RequestContext(request))
 	else:
 		return render_to_response('composer.html', {}, context_instance=RequestContext(request))
 
@@ -56,7 +58,9 @@ def posts(request):
 
 def post(request, post_id):
 	post_detail = get_object_or_404(Page, pk=post_id)
-	return render_to_response('post.html', {'post_detail': post_detail}, context_instance=RequestContext(request))
+	import markdown
+	markdownhtml = markdown.markdown(post_detail.content)
+	return render_to_response('post.html', {'post_detail': post_detail, 'markdownhtml': markdownhtml}, context_instance=RequestContext(request))
 
 
 # Retired view
